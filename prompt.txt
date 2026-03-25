@@ -1,0 +1,123 @@
+I'm building a portfolio project called "NHS A&E Performance Dashboard" for my GitHub. I'm an experienced data analyst targeting NHS roles. I want this project to showcase SQL Server, Python, Excel, and Power BI skills.
+
+IMPORTANT: At every step, explain what you're doing and why in plain English before you do it. I want to learn from this process so I can defend every part of it in an interview.
+
+STEP 1 — Project setup:
+- Create a proper project structure with folders: data/raw, data/processed, sql, scripts, output/charts, output/excel, docs, and a README.md
+- Create a requirements.txt with pandas, matplotlib, seaborn, openpyxl, xlsxwriter, pyodbc
+- Install the requirements
+- Initialize git with a .gitignore for Python projects
+- Explain what each folder is for
+
+STEP 2 — Download the data:
+- Download the Monthly A&E Time Series file from https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/
+- Also download the most recent monthly A&E CSV file from https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/ae-attendances-and-emergency-admissions-2025-26/
+- Save both into data/raw/
+- Explore the files and show me the structure, columns, data types, row counts, and first few rows so I understand what we're working with
+- Explain what each column means in the context of NHS A&E reporting
+
+STEP 3 — Clean and prepare the data:
+- Read the downloaded files with pandas
+- Clean column names, handle missing values, fix data types
+- Save cleaned versions as CSV files in data/processed/
+- Explain every cleaning decision — why you renamed columns, how you handled nulls, why you changed data types
+
+STEP 4 — Load data into SQL Server:
+- Connect to my local SQL Server instance: DESKTOP-4BP374J\SQLEXPRESS using Windows Authentication (trusted connection)
+- Create a new database called NHS_AE_Analysis
+- Create properly typed tables with appropriate data types (VARCHAR for text, INT for counts, DECIMAL for percentages, DATE for dates)
+- Load the cleaned data from pandas into the SQL Server tables
+- Verify the data loaded correctly by running a row count
+- Save the connection and loading script as scripts/load_to_sqlserver.py with detailed comments explaining each step
+
+STEP 5 — SQL Server analysis (save all queries in sql/ folder as .sql files):
+Connect to SQL Server and run these queries, saving results. Use proper SQL Server syntax. Add detailed comments above every query explaining what it does, why I wrote it this way, and what the results mean.
+
+- 01_total_attendances_by_month.sql — Monthly attendances over the last 3 years. Explain the date filtering approach.
+- 02_four_hour_performance_by_provider.sql — Percentage seen within 4 hours, ranked worst to best. Explain how the percentage is calculated.
+- 03_seasonal_patterns.sql — Which months have highest attendances. Use window functions and explain what PARTITION BY and ORDER BY do here.
+- 04_year_over_year_comparison.sql — Year-over-year 4-hour target performance. Use CTEs and LAG. Explain what a CTE is and why LAG is useful for comparisons.
+- 05_top_bottom_trusts.sql — Top 10 and bottom 10 performing trusts. Use RANK or DENSE_RANK. Explain the difference between RANK, DENSE_RANK, and ROW_NUMBER.
+- 06_emergency_admissions_analysis.sql — Emergency admissions as percentage of total attendances. Use CASE statements and explain when to use CASE.
+
+After running each query, show me the results and explain what the data is telling us.
+
+STEP 6 — Python analysis and visualisations (save scripts in scripts/ folder):
+Create a Python script called scripts/visualisations.py that:
+- Connects to SQL Server to pull the analysis results
+- Produces these charts saved to output/charts/:
+  1. Line chart: Monthly A&E attendances trend over time
+  2. Line chart: 4-hour target performance over time with the 78% target line marked
+  3. Bar chart: Top 10 and bottom 10 trusts by 4-hour performance
+  4. Heatmap: Seasonal patterns in attendances by month and year
+  5. Bar chart: Emergency admissions as percentage of attendances by trust type
+- Use a consistent professional colour scheme suitable for an NHS report
+- Add clear titles, axis labels, data labels where appropriate
+- Add comments in the script explaining each visualisation step
+
+STEP 7 — Excel workbook (save in output/excel/):
+Create a polished Excel workbook called nhs_ae_analysis.xlsx with:
+- A "Summary" sheet with key metrics formatted as a dashboard (total attendances, average 4-hour performance, trend direction)
+- A "Monthly Trends" sheet with the monthly data and an embedded Excel chart
+- A "Trust Rankings" sheet with top and bottom performing trusts, conditionally formatted (green for good, red for poor)
+- A "Data" sheet with the cleaned dataset
+Format it professionally — headers, borders, number formatting, column widths. This should look like something you'd present to a senior NHS stakeholder.
+
+STEP 8 — Power BI preparation:
+- Save a Power BI-ready dataset as a clean CSV in output/ called powerbi_ready.csv
+- Create output/powerbi_guide.md with detailed step-by-step instructions for what I should build in Power BI: which charts to create, exact DAX measures to write (with explanations of what each measure does), recommended slicers and filters, and layout suggestions
+
+STEP 9 — Interview preparation guide:
+Create docs/interview_guide.md that includes:
+
+PROJECT OVERVIEW:
+- A plain-English walkthrough of the entire project from start to finish — why I chose this dataset, what business problem it addresses, and how an NHS trust would actually use this analysis
+
+DATA ACQUISITION & CLEANING:
+- Why I chose these specific NHS data sources
+- Every cleaning decision explained — why columns were renamed, how nulls were handled, why data types were changed, what I checked for quality
+- What I'd do differently with messier or larger data
+
+SQL SERVER:
+- A walkthrough of every SQL query — what it does, why I used that approach, and what alternative approaches exist
+- Explanations of key concepts: CTEs, window functions, RANK vs DENSE_RANK, LAG, CASE statements
+- Why I chose SQL Server and how the database was structured
+
+PYTHON & VISUALISATIONS:
+- Why I chose each chart type and what story it tells
+- Why I used matplotlib/seaborn and when you'd choose one over the other
+- How the Python scripts connect to SQL Server and why that matters
+- What each pandas operation does in the data processing pipeline
+
+EXCEL:
+- Why Excel is still important alongside Python and Power BI
+- How I structured the workbook for a senior stakeholder audience
+- What the conditional formatting rules do and why they help
+
+POWER BI:
+- Why Power BI is the right tool for the interactive dashboard layer
+- What each DAX measure does in plain English
+- How the data model works and why relationships matter
+
+BUSINESS INSIGHTS:
+- What the key findings mean for NHS operational decision-making
+- How an NHS trust could act on these insights
+- Common interview questions someone might ask about this project and strong answers
+
+STEP 10 — Professional README:
+Write a README.md that includes:
+- Project title and one-paragraph overview explaining the business context (NHS 4-hour A&E target, current performance challenges)
+- Data source with link to NHS England
+- Key findings section (fill in based on actual results from the analysis)
+- Methodology section explaining the multi-tool approach: SQL Server for querying, Python for analysis and visualisation, Excel for stakeholder reporting, Power BI for interactive dashboards
+- Screenshots section (placeholder for now — I'll add Power BI screenshots later)
+- Folder structure explanation
+- How to reproduce the analysis
+- Tools Used: SQL Server, Python, pandas, matplotlib, seaborn, Excel, Power BI
+
+STEP 11 — Push to GitHub:
+- Create a public repo called "nhs-ae-dashboard" on my GitHub
+- Commit everything with a clear commit message
+- Push to GitHub and show me the URL
+
+Take this one step at a time. After each step, pause to show me what you did and explain it before moving on. I want to understand everything.

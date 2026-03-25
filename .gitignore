@@ -39,10 +39,6 @@ desktop.ini
 *.ndf
 *.bak
 
-# Claude Code settings
-.claude/
-.claude.json
-
 # IDE
 *.suo
 *.user

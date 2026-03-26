@@ -55,3 +55,7 @@ data/raw/*.csv
 data/raw/*.xlsx
 data/raw/*.xls
 
+# Personal revision notes (not for GitHub)
+docs/personal_study_guide.md
+docs/excel_cleaning.md
+docs/powerbi_data_prep_explained.md

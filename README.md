@@ -138,9 +138,12 @@ python scripts/visualisations.py
 
 # 6. Build Excel workbook
 python scripts/build_excel.py
+
+# 7. Export Power BI-ready CSVs
+python scripts/build_powerbi.py
 ```
 
-To update with newer data: download the latest files from NHS England into `data/raw/`, replace the filenames in `clean_data.py` and `load_to_sqlserver.py`, and re-run steps 2–6.
+To update with newer data: download the latest files from NHS England into `data/raw/`, replace the filenames in `clean_data.py` and `load_to_sqlserver.py`, and re-run steps 2–7.
 
 ---
 

@@ -165,7 +165,26 @@ To update with newer data: download the latest files from NHS England into `data
 
 ## Screenshots
 
-*Power BI dashboard screenshots to be added after dashboard build is complete.*
+### Power BI Dashboard
+
+**Page 1 — National Overview**
+![National Overview](output/charts/powerbi_page1_overview.PNG)
+
+**Page 2 — Trust Performance**
+![Trust Performance](output/charts/powerbi_page2_trusts.PNG)
+
+**Page 3 — Seasonality & Admissions**
+![Seasonality & Admissions](output/charts/powerbi_page3_seasonality.PNG)
+
+### Python Charts
+
+| Chart | Preview |
+|---|---|
+| Monthly A&E attendances trend | ![](output/charts/line_monthly_attendances.png) |
+| 4-hour target performance over time | ![](output/charts/line_4hr_performance.png) |
+| Top 10 and bottom 10 trusts by performance | ![](output/charts/bar_top_bottom_trusts.png) |
+| Seasonal attendance heatmap | ![](output/charts/heatmap_seasonal.png) |
+| Emergency admission rates by region | ![](output/charts/bar_admissions_by_region.png) |
 
 ---
 

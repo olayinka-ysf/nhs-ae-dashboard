@@ -6,7 +6,7 @@ An end-to-end data analytics portfolio project analysing NHS England A&E waiting
 
 ## Overview
 
-The NHS 4-hour A&E target requires that 95% of patients are seen, treated, and either admitted or discharged within 4 hours of arrival. This standard has not been consistently met since 2013, and was formally reset to 78% in 2023. Despite this, England continues to struggle — as of February 2026 national performance remains below even the revised standard, with wide variation between trusts.
+The NHS 4-hour A&E target requires that 95% of patients are seen, treated, and either admitted or discharged within 4 hours of arrival. This standard has not been consistently met since 2013, and was formally reset to 78% in 2023. Despite this, England continues to struggle. As of February 2026, national performance remains below even the revised standard, with wide variation between trusts.
 
 This project builds a complete analytical pipeline around the official NHS England monthly statistics:
 
@@ -32,10 +32,10 @@ Published monthly by NHS England's Statistical Work Areas.
 ## Key Findings
 
 - **National 4-hour performance** peaked above 95% in 2013 and has declined since; as of February 2026 it sits below the revised 78% operational standard
-- **Provider variation is extreme** — the best-performing trusts exceed 95% while the worst fall below 60%, suggesting operational factors beyond system-wide demand
-- **Winter seasonality is structural** — December and January consistently show the highest attendance volumes across every year in the dataset; January average attendances are approximately 15% higher than the summer trough
-- **Larger trusts perform worse** on average than smaller ones, likely reflecting their role as major acute centres receiving the most complex cases
-- **Emergency admission rates vary by region** — there is meaningful regional variation in the proportion of Type 1 attendees who are subsequently admitted, with implications for bed capacity planning
+- **Provider variation is extreme**: The best-performing trusts exceed 95% while the worst fall below 60%, suggesting operational factors beyond system-wide demand
+- **Winter seasonality is structural**: December and January consistently show the highest attendance volumes across every year in the dataset; January average attendances are approximately 15% higher than the summer trough
+- **Larger trusts perform worse**: On average than smaller ones, likely reflecting their role as major acute centres receiving the most complex cases
+- **Emergency admission rates vary by region**: There is meaningful regional variation in the proportion of Type 1 attendees who are subsequently admitted, with implications for bed capacity planning
 
 ---
 
